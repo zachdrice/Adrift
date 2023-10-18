@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "username": "Admin",
+      "password": "",
+      "created": "Wed Dec 31 1969 19:00:00 GMT-0500 (Eastern Standard Time)",
+      "id": 0,
+      "friends": [],
+      "token": "mT? (@MH'$*}L\"@f h6o~DGjvUJS H$  a}+{.QeB*3j?41VtK"
+    },
+    {
+      "username": "Cabine",
+      "password": "0202cb962ac59075b964b07152d234b70da39a3ee5e6b4b0d3255bfef95601890afd807090de6c57200b78c3230b556bc794266a9",
+      "created": "Tue Oct 17 2023 22:01:49 GMT-0400 (Eastern Daylight Time)",
+      "id": 1,
+      "friends": [],
+      "token": "~d4d 6B]m&0Qa6\\@e#Cc~GS5\\l|vD_4:\\p#pZZS3fV8BtaX\" '"
+    }
+  ]
+}

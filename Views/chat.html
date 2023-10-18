@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-US en">
+<head>
+  <title>Chat | Adrift</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="Style/grid.css" />
+  <link rel="stylesheet" type="text/css" href="Style/chat.style.css" />
+  <link rel="stylesheet" type="text/css" href="Style/style.css" />
+  <link rel="stylesheet" type="text/css" href="Style/yt.mod.css" />
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/siofu/client.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>const pageTitle = 'chat'</script>
+  <script src="JavaScript/language.js"></script>
+  <script src="JavaScript/chat.js"></script>
+  <script src="JavaScript/yt.mod.js"></script>
+  <script src="JavaScript/video.js"></script>
+</head>
+<body>
+  <div id="yt-main">
+    <div id="yt-overlay"></div>
+    <div id="yt-container"></div>
+  </div>
+  <div id="video-box">
+    <div id="video-section">
+      <img src="img/leave.png" id="leave-vc" alt="Leave Video Chat" />
+      <video id="video-remote"></video>
+      <video id="video-self" muted></video>
+    </div>
+    <div id="video-footer">
+      <img src="img/speaker.png" alt="Deafen" id="deaf-video" />
+      <img src="img/speaker-deaf.png" alt="Undeafen" id="undeaf-video" />
+      <input type="range" max="100" min="0" id="other-volume-video" />
+      <span id="mic-icons">
+          <input type="range" max="100" min="0" id="self-volume-video" />
+        <img src="img/mic.png" alt="Mute Mic" id="mute-video" />
+        <img src="img/mic-mute.png" alt="Mute Mic" id="unmute-video" />
+      </span>
+    </div>
+  </div>
+  <div id="call-box">
+    <h1><span id="call-type-voice">Voice</span><span id="call-type-video">Video</span> <span id="call-label">Call</span></h1>
+    <h3>From: <span id="caller-name">Cabine</span></h3>
+    <img src="img/accept-call.png" alt="Accept Call" />
+    <img src="img/reject-call.png" alt="Reject Call" />
+  </div>
+  <div id="block-layer"></div>
+  <div id="create-box">
+    <h1 id="create-chat-label">Create Chat</h1><h1 id="create-close">x</h1>
+    <input type="text" id="create-name" placeholder="Name of Chat" />
+    <input type="password" id="create-password" placeholder="Chat Password" />
+    <br />
+    <div id="create-checkbox">
+      <input type="checkbox" id="create-type" />
+      <h3 style="display: inline;" id="public-checkbox-label">Public</h3>
+    </div>
+    <br />
+    <button id="create-button">Create Chat</button>
+  </div>
+  <div id="join-box">
+    <h1 id="join-chat-label">Join Chat</h1><h1 id="join-close">x</h1>
+    <input type="text" id="join-name" placeholder="Name of Chat" />
+    <input type="password" id="join-password" placeholder="Chat Password" />
+    <br />
+    <button id="join-button">Join Chat</button>
+  </div>
+  <div id="edit-box"></div>
+  <div id="notify-box">
+    <div id="notify-header">
+      Notifications
+    </div>
+    <div id="notifications"></div>
+  </div>
+  <div id="user-box">
+    <h2 id="user-name"></h2>
+    <h2 id="user-isfriend" class="smallTxt">Friend</h2>
+    <h3 id="user-created" class="smallTxt"></h3>
+    <p align="center"><button id="user-add">Add Friend</button></p>
+    <p align="center"><button id="user-remove">Remove Friend</button></p>
+  </div>
+  <div id="friend-alert">
+    <h2></h2>
+  </div>
+  <div id="usr-settings-box">
+      <span class="left" id="Usr-Icon">User Icon Here</span>
+    <span class="right">Username Here</span>
+    <div class="full-width">
+      <span id="dark-mode-toggle-label">Dark Mode</span>
+      <input type="checkbox" id="settings-dark">
+    </div>
+  </div>
+  <div class="container">
+    <div class="header">
+      <h1 id="mainTitle">
+        <span id="mTitleTxt">Adrift</span> 
+        <img id="notify-button" src="img/notify.png" title="Notifications" />
+      </h1>
+      <br id="links-title-br" style="display: none;" />
+      <div id="header-links" style="float: right; position: relative; top: -50px; left: -15px;">
+        <span id="header-links-inner">
+          <a href="#" id="chatsBtn" style="display: none">Chats</a></a>
+          <span class="smallGapHeaderLink">_</span>
+          <a href="#" id="usersBtn"style="display: none">Users</a>
+          <span class="smallGapHeaderLink">_</span>
+          <a href="cls" id="clear-msgs-btn">Clear Messages</a>
+          <span class="smallGapHeaderLink">_</span>
+          <a href="#" id="logout">Logout</a>
+        </span>
+      </div>
+    </div>
+    <div class="sidebar sidebar-left">
+      <h3 class="chat-button" id="friends-button">Friends</h3>
+      <p class="smallTxt" id="small-txt-chats">Chats</p>
+      <div id="chats"></div>
+      <p class="smallTxt" id="small-txt-actions">Actions</p>
+      <div id="actions"></div>
+    </div>
+    <div class="content content-center">
+      <div id="chat-container">
+        <div id="chat"></div>
+        <section id="msg-area">
+          <textarea id="message" dir="auto" placeholder="Message Chat"></textarea>
+          <button id="edit">Edit</button>
+          <button id="cancel">Cancel</button>
+          <div id="uploadBtn">
+            <input type="file" id="upload" name="upload" />
+            <label for="upload">
+              <a title="Upload a File"><img src="img/upload.png" alt="Upload a File" id="upload-img" /></a>
+            </label>
+          </div>
+        </section>
+      </div>
+      <div id="friends-container">
+        <div id="friends"></div>
+      </div>
+    </div>
+    <div class="sidebar sidebar-right">
+      <p class="smallTxt" id="online-users"><span id="online-users-label">Online Users</span> - <span id="usr-count"></span></p>
+      <div id="users"><ul></ul></div>
+    </div>
+  </div>
+</body>
+</html>

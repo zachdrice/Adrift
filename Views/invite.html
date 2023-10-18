@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-US en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <link rel="stylesheet" type="text/css" href="../Style/invite.css" />
+  <script src="../socket.io/socket.io.js"></script>
+  <title>Adrift | Invite</title>
+</head>
+<body>
+  <section>
+    <h1>CabineChat</h1>
+    <h3><span id="created-label">Created</span>: <span id="created">Sat Mar 23 2019</span></h3>
+    <button id="join">Join</button>
+    <h5><span id="owner"><span id="owner-label">Owner</span>: <span id="owner-name">Cabine</span></span><span id="member"><span id="member-label">Members</span>: <span id="member-count">50</span></span></h5>
+  </section>
+  <footer><h4><span id="code">%INVITE_CODE%</span><span id="return">Return to Adrift</span></h4></footer>
+  <script>let invite = '%INVITE_CODE%';</script>
+  <script src="../JavaScript/invite.js"></script>
+  <script src="../JavaScript/language.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+.usr-form button {
+    background-color: #52bcf9;
+    border: 2px solid #52bcf9;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 25px;
+    vertical-align: center;
+    transition: 0.25s;
+    -webkit-transition: 0.25s;
+    padding: 0 10px 0 10px;
+}
+.usr-form button:hover {
+    background-color: skyblue;
+    border-color: skyblue;
+}
+.usr-form-submit {
+    position: absolute;
+    right: 0px;
+}
+.usr-form {
+    position: absolute;
+    display: block;
+    width: 500px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.user-name {
+    cursor: pointer;
+}
+
+/* Grid Stuff */
+.form-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: auto;
+    grid-column-gap: 10px;
+}
+.input-full-width {
+    grid-column: 1 / 3;
+}
+.input-half-width .left {
+    grid-column: 1;
+}
+.input-half-width .right {
+    grid-column: 2;
+}

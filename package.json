@@ -1,0 +1,33 @@
+{
+  "name": "adrift",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nazrilof/Adrift.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nazrilof/Adrift/issues"
+  },
+  "homepage": "https://github.com/Nazrilof/Adrift#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ddos": "^0.2.1",
+    "express": "^4.16.4",
+    "express-useragent": "^1.0.12",
+    "linkify-urls": "^3.0.0",
+    "md5": "^2.2.1",
+    "metaphone": "^1.0.4",
+    "request": "^2.88.0",
+    "sha1": "^1.1.1",
+    "socket.io": "^2.2.0",
+    "socketio-file-upload": "^0.7.0"
+  }
+}

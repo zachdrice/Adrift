@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+  <title>Login | Adrift</title>
+  <script src="/socket.io/socket.io.js"></script>
+  <link rel="stylesheet" type="text/css" href="Style/usrForm.css">
+  <link rel="stylesheet" type="text/css" href="Style/style.css">
+</head>
+<body>
+  <div id="login-area" class="usr-form">
+    <h1 style="text-align: center;" id="adrift">Adrift</h1> <!-- Placeholder for logo -->
+    <form class="form-container"> 
+      <input class="input-full-width" id="username" type="text" placeholder="Username" /><br>
+      <input class="input-full-width" id="password" type="password" placeholder="Password" /><br>
+    </form>
+    <a href="signup" id="signup-a">Create an Account</a>
+    <button class="usr-form-submit" id="login-btn">Login</button>
+  </div>
+  <script src="JavaScript/login.js"></script>
+  <script src="JavaScript/language.js"></script>
+</body>
+</html>

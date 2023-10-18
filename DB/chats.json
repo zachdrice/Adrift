@@ -1,0 +1,20 @@
+{
+  "chats": {
+    "main": {
+      "name": "Main Chat",
+      "id": "main",
+      "type": "public",
+      "messages": [
+        {
+          "user": {
+            "id": 0,
+            "name": "Admin"
+          },
+          "msg": "This is a public channel. You can create public or private channels with the New Button. If one already exists, you can join it with a password or invite link.",
+          "id": 0,
+          "sent": 1697594061052
+        }
+      ]
+    }
+  }
+}

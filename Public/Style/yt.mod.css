@@ -1,0 +1,55 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+#yt-main {
+  right: 25px;
+  bottom: 25px;
+  width: auto;
+  height: auto;
+  box-shadow: 0px 0px 5px #888888;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  display: none;
+  overflow: hidden;
+  z-index: 1;
+  background-color: white;
+}
+#yt-close {
+  color: grey;
+  float: right;
+}
+#yt-overlay {
+  display: none;
+  position: absolute;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 0 5px #000;
+  border-radius: 100%;
+  animation: flyin linear 0.25s forwards;
+  -webkit-animation: flyin linear 0.25s forwards;
+  background: center no-repeat url('../img/exit.png'),
+    white 100%;
+  background-size: 50%;
+  cursor: pointer;
+}
+@-webkit-keyframes flyin {
+  0% { top: -50px; }
+  60% { top: 40px }
+  100% { top: 15px; }
+}
+@keyframes flyin {
+  0% { top: -50px; }
+  60% { top: 40px }
+  100% { top: 15px; }
+}
+
+/* Inline Players */
+.yt-container {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 10px;
+  border: 3px solid lightgrey;
+  border-radius: 5px;
+}
